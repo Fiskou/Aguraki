@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b6c5c38-5f7c-4176-81ea-9384c5856fcc" name="Default Changelist" comment="" />
+    <list default="true" id="0b6c5c38-5f7c-4176-81ea-9384c5856fcc" name="Default Changelist" comment="Update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,9 +27,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RunManager">
     <configuration name="Aguraki" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -45,13 +46,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -70,7 +73,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606331316139</updated>
-      <workItem from="1606331318011" duration="7065000" />
+      <workItem from="1606331318011" duration="7693000" />
+      <workItem from="1606339360350" duration="1024000" />
     </task>
     <servers />
   </component>
@@ -78,22 +82,44 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="88" y="273" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606338482826">
-      <screen x="0" y="0" width="1268" height="1236" />
+    <state x="116" y="195" key="#Project_Structure" timestamp="1606339539835">
+      <screen x="0" y="0" width="1272" height="1242" />
+    </state>
+    <state x="116" y="195" key="#Project_Structure/0.0.1272.1242@0.0.1272.1242" timestamp="1606339539835" />
+    <state x="88" y="274" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606339596844">
+      <screen x="0" y="0" width="1272" height="1242" />
     </state>
     <state x="88" y="273" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1268.1236@0.0.1268.1236" timestamp="1606338482826" />
-    <state x="528" y="377" key="FileChooserDialogImpl" timestamp="1606338495001">
+    <state x="88" y="274" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1272.1242@0.0.1272.1242" timestamp="1606339596844" />
+    <state x="528" y="377" key="FileChooserDialogImpl" timestamp="1606339383463">
       <screen x="0" y="0" width="1268" height="1236" />
     </state>
-    <state x="528" y="377" key="FileChooserDialogImpl/0.0.1268.1236@0.0.1268.1236" timestamp="1606338495001" />
+    <state x="528" y="377" key="FileChooserDialogImpl/0.0.1268.1236@0.0.1268.1236" timestamp="1606339383463" />
+    <state width="1229" height="348" key="GridCell.Tab.0.bottom" timestamp="1606340395853">
+      <screen x="0" y="0" width="1272" height="1242" />
+    </state>
+    <state width="1229" height="348" key="GridCell.Tab.0.bottom/0.0.1272.1242@0.0.1272.1242" timestamp="1606340395853" />
+    <state width="1229" height="348" key="GridCell.Tab.0.center" timestamp="1606340395853">
+      <screen x="0" y="0" width="1272" height="1242" />
+    </state>
+    <state width="1229" height="348" key="GridCell.Tab.0.center/0.0.1272.1242@0.0.1272.1242" timestamp="1606340395853" />
+    <state width="1229" height="348" key="GridCell.Tab.0.left" timestamp="1606340395853">
+      <screen x="0" y="0" width="1272" height="1242" />
+    </state>
+    <state width="1229" height="348" key="GridCell.Tab.0.left/0.0.1272.1242@0.0.1272.1242" timestamp="1606340395853" />
+    <state width="1229" height="348" key="GridCell.Tab.0.right" timestamp="1606340395853">
+      <screen x="0" y="0" width="1272" height="1242" />
+    </state>
+    <state width="1229" height="348" key="GridCell.Tab.0.right/0.0.1272.1242@0.0.1272.1242" timestamp="1606340395853" />
     <state x="413" y="372" width="752" height="591" key="NewModule_or_Project.wizard" timestamp="1606338497892">
       <screen x="0" y="0" width="1268" height="1236" />
     </state>
     <state x="413" y="372" width="752" height="591" key="NewModule_or_Project.wizard/0.0.1268.1236@0.0.1268.1236" timestamp="1606338497892" />
-    <state x="228" y="242" key="SettingsEditor" timestamp="1606338499083">
-      <screen x="0" y="0" width="1268" height="1236" />
+    <state x="77" y="208" key="SettingsEditor" timestamp="1606340307667">
+      <screen x="0" y="0" width="1272" height="1242" />
     </state>
-    <state x="228" y="242" key="SettingsEditor/0.0.1268.1236@0.0.1268.1236" timestamp="1606338499083" />
+    <state x="228" y="242" key="SettingsEditor/0.0.1268.1236@0.0.1268.1236" timestamp="1606339391009" />
+    <state x="77" y="208" key="SettingsEditor/0.0.1272.1242@0.0.1272.1242" timestamp="1606340307667" />
     <state x="760" y="274" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1606331370014" />
     <state x="1270" y="0" width="1291" height="1251" key="dock-window-1" timestamp="1606335424848">
       <screen x="0" y="0" width="2554" height="1244" />
