@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.IntStream;
+
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -24,21 +25,15 @@ public class Aguraki extends Application {
 	//variables
 	private static final Random RAND = new Random();
 	private static final int WIDTH = 800;
-	private static final int HEIGHT = 600;
+	public static final int HEIGHT = 600;
 	private static final int PLAYER_SIZE = 60;
 	static final Image PLAYER_IMG = new Image("images/player.png");
-	static final Image EXPLOSION_IMG = new Image("images/explosion.png");
-	static final int EXPLOSION_W = 128;
-	static final int EXPLOSION_ROWS = 3;
-	static final int EXPLOSION_COL = 3;
-	static final int EXPLOSION_H = 128;
-	static final int EXPLOSION_STEPS = 15;
 	
 	static final Image[] ENEMIES_IMG = {
 			new Image("images/ennemi1.png"),
 			new Image("images/ennemi2.png"),
 	};
-	
+
 	final int MAX_ENNEMIES = 10,  MAX_SHOTS = MAX_ENNEMIES * 2;
 	boolean gameOver = false;
 	private GraphicsContext gc;
@@ -49,7 +44,7 @@ public class Aguraki extends Application {
 	List<Enemy> enemies;
 	
 	private double mouseX;
-	private int score;
+	public static int score;
 
 	//start
 	public void start(Stage stage) throws Exception {
@@ -99,13 +94,13 @@ public class Aguraki extends Application {
 			gc.setFill(Color.YELLOW);
 			gc.fillText("Game Over \n Your Score is: " + score + " \n Click to play again", WIDTH / 2.0, HEIGHT /2.5);
 		}
-		univ.forEach(Universe::draw);
-	
+		univ.forEach(o -> o.draw(gc));
+
 		player.update();
-		player.draw();
+		player.draw(gc);
 		player.posX = (int) mouseX;
 		
-		enemies.stream().peek(Player::update).peek(Player::draw).forEach(e -> {
+		enemies.stream().peek(Player::update).peek(o -> o.draw(gc)).forEach(e -> {
 			if(player.colide(e) && !player.exploding) {
 				player.explode();
 			}
@@ -119,7 +114,7 @@ public class Aguraki extends Application {
 				continue;
 			}
 			shot.update();
-			shot.draw();
+			shot.draw(gc);
 			for (Enemy enemy : enemies) {
 				if(shot.colide(enemy) && !enemy.exploding) {
 					score++;
@@ -137,7 +132,7 @@ public class Aguraki extends Application {
 	
 		gameOver = player.destroyed;
 		if(RAND.nextInt(10) > 2) {
-			univ.add(new Universe());
+			univ.add(new Universe(RAND, WIDTH));
 		}
 		for (int i = 0; i < univ.size(); i++) {
 			if(univ.get(i).posY > HEIGHT)
@@ -148,143 +143,12 @@ public class Aguraki extends Application {
 				}
 		}
 	}
-
-	//player
-	public class Player {
-
-		int posX, posY, size;
-		boolean exploding, destroyed;
-		Image img;
-		int explosionStep = 0;
-		
-		public Player(int posX, int posY, int size, Image image) {
-			this.posX = posX;
-			this.posY = posY;
-			this.size = size;
-			img = image;
-		}
-		
-		public Shot shoot() {
-			return new Shot(posX + size / 2 - Shot.size / 2, posY - Shot.size);
-		}
-
-		public void update() {
-			if(exploding) explosionStep++;
-			destroyed = explosionStep > EXPLOSION_STEPS;
-		}
-		
-		public void draw() {
-			if(exploding) {
-				gc.drawImage(EXPLOSION_IMG, explosionStep % EXPLOSION_COL * EXPLOSION_W, (explosionStep / EXPLOSION_ROWS) * EXPLOSION_H + 1,
-						EXPLOSION_W, EXPLOSION_H,
-						posX, posY, size, size);
-			}
-			else {
-				gc.drawImage(img, posX, posY, size, size);
-			}
-		}
-	
-		public boolean colide(Player other) {
-			int d = distance(this.posX + size / 2, this.posY + size /2, 
-							other.posX + other.size / 2, other.posY + other.size / 2);
-			return d < other.size / 2 + this.size / 2 ;
-		}
-		
-		public void explode() {
-			exploding = true;
-			explosionStep = -1;
-		}
-
-	}
-	
-	//computer player
-	public class Enemy extends Player {
-		
-		int SPEED = (score/5)+2;
-		
-		public Enemy(int posX, int posY, int size, Image image) {
-			super(posX, posY, size, image);
-		}
-		
-		public void update() {
-			super.update();
-			if(!exploding && !destroyed) posY += SPEED;
-			if(posY > HEIGHT) destroyed = true;
-		}
-	}
-
-	//bullets
-	public class Shot {
-		
-		public boolean toRemove;
-
-		int posX, posY, speed = 10;
-		static final int size = 6;
-			
-		public Shot(int posX, int posY) {
-			this.posX = posX;
-			this.posY = posY;
-		}
-
-		public void update() {
-			posY-=speed;
-		}
-		
-
-		public void draw() {
-			gc.setFill(Color.RED);
-			if (score >=50 && score<=70 || score>=120) {
-				gc.setFill(Color.YELLOWGREEN);
-				speed = 50;
-				gc.fillRect(posX-5, posY-10, size+10, size+30);
-			} else {
-			gc.fillOval(posX, posY, size, size);
-			}
-		}
-		
-		public boolean colide(Player Player) {
-			int distance = distance(this.posX + size / 2, this.posY + size / 2, 
-					Player.posX + Player.size / 2, Player.posY + Player.size / 2);
-			return distance  < Player.size / 2 + size / 2;
-		} 
-		
-		
-	}
-	
-	//environment
-	public class Universe {
-		int posX, posY;
-		private final int h, w, r, g, b;
-		private double opacity;
-		
-		public Universe() {
-			posX = RAND.nextInt(WIDTH);
-			posY = 0;
-			w = RAND.nextInt(5) + 1;
-			h =  RAND.nextInt(5) + 1;
-			r = RAND.nextInt(100) + 150;
-			g = RAND.nextInt(100) + 150;
-			b = RAND.nextInt(100) + 150;
-			opacity = RAND.nextFloat();
-			if(opacity < 0) opacity *=-1;
-			if(opacity > 0.5) opacity = 0.5;
-		}
-		
-		public void draw() {
-			if(opacity > 0.8) opacity-=0.01;
-			if(opacity < 0.1) opacity+=0.01;
-			gc.setFill(Color.rgb(r, g, b, opacity));
-			gc.fillOval(posX, posY, w, h);
-			posY+=20;
-		}
-	}
-	
 	
 	Enemy newEnemy() {
 		return new Enemy(50 + RAND.nextInt(WIDTH - 100), 0, PLAYER_SIZE, ENEMIES_IMG[RAND.nextInt(ENEMIES_IMG.length)]);
 	}
 	
-	int distance(int x1, int y1, int x2, int y2) {
+	public static int distance(int x1, int y1, int x2, int y2) {
 		return (int) Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
 	}
 	
