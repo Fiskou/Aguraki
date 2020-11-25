@@ -9,7 +9,7 @@ public class Enemy extends Player {
         super(posX, posY, size, image);
     }
 
-    public void update() {
+    public void update(int HEIGHT) {
         super.update();
         if(!exploding && !destroyed) posY += SPEED;
         if(posY > HEIGHT) destroyed = true;

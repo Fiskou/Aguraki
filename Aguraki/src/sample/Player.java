@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
 public class Player {
@@ -24,8 +25,8 @@ public class Player {
         img = image;
     }
 
-    public Aguraki.Shot shoot() {
-        return new Aguraki.Shot(posX + size / 2 - Aguraki.Shot.size / 2, posY - Aguraki.Shot.size);
+    public Shot shoot() {
+        return new Shot(posX + size / 2 - Shot.size / 2, posY - Shot.size);
     }
 
     public void update() {
@@ -33,7 +34,7 @@ public class Player {
         destroyed = explosionStep > EXPLOSION_STEPS;
     }
 
-    public void draw() {
+    public void draw(GraphicsContext gc) {
         if(exploding) {
             gc.drawImage(EXPLOSION_IMG, explosionStep % EXPLOSION_COL * EXPLOSION_W, (explosionStep / EXPLOSION_ROWS) * EXPLOSION_H + 1,
                     EXPLOSION_W, EXPLOSION_H,
@@ -44,7 +45,7 @@ public class Player {
         }
     }
 
-    public boolean colide(Aguraki.Player other) {
+    public boolean colide(Player other) {
         int d = distance(this.posX + size / 2, this.posY + size /2,
                 other.posX + other.size / 2, other.posY + other.size / 2);
         return d < other.size / 2 + this.size / 2 ;

@@ -33,7 +33,7 @@ public class Aguraki extends Application {
 			new Image("images/ennemi1.png"),
 			new Image("images/ennemi2.png"),
 	};
-	
+
 	final int MAX_ENNEMIES = 10,  MAX_SHOTS = MAX_ENNEMIES * 2;
 	boolean gameOver = false;
 	private GraphicsContext gc;
@@ -95,7 +95,7 @@ public class Aguraki extends Application {
 			gc.fillText("Game Over \n Your Score is: " + score + " \n Click to play again", WIDTH / 2.0, HEIGHT /2.5);
 		}
 		univ.forEach(Universe::draw);
-	
+
 		player.update();
 		player.draw();
 		player.posX = (int) mouseX;
@@ -132,7 +132,7 @@ public class Aguraki extends Application {
 	
 		gameOver = player.destroyed;
 		if(RAND.nextInt(10) > 2) {
-			univ.add(new Universe());
+			univ.add(new Universe(RAND, WIDTH));
 		}
 		for (int i = 0; i < univ.size(); i++) {
 			if(univ.get(i).posY > HEIGHT)
