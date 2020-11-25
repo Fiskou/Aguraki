@@ -1,6 +1,9 @@
 package sample;
 
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+
+import static sample.Aguraki.score;
 
 public class Shot {
     public boolean toRemove;
@@ -17,8 +20,7 @@ public class Shot {
         posY-=speed;
     }
 
-
-    public void draw() {
+    public void draw(GraphicsContext gc) {
         gc.setFill(Color.RED);
         if (score >=50 && score<=70 || score>=120) {
             gc.setFill(Color.YELLOWGREEN);
@@ -30,7 +32,7 @@ public class Shot {
     }
 
     public boolean colide(Player Player) {
-        int distance = distance(this.posX + size / 2, this.posY + size / 2,
+        int distance = Aguraki.distance(this.posX + size / 2, this.posY + size / 2,
                 Player.posX + Player.size / 2, Player.posY + Player.size / 2);
         return distance  < Player.size / 2 + size / 2;
     }

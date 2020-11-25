@@ -25,7 +25,7 @@ public class Aguraki extends Application {
 	//variables
 	private static final Random RAND = new Random();
 	private static final int WIDTH = 800;
-	private static final int HEIGHT = 600;
+	public static final int HEIGHT = 600;
 	private static final int PLAYER_SIZE = 60;
 	static final Image PLAYER_IMG = new Image("images/player.png");
 	
@@ -44,7 +44,7 @@ public class Aguraki extends Application {
 	List<Enemy> enemies;
 	
 	private double mouseX;
-	private int score;
+	public static int score;
 
 	//start
 	public void start(Stage stage) throws Exception {
@@ -94,13 +94,13 @@ public class Aguraki extends Application {
 			gc.setFill(Color.YELLOW);
 			gc.fillText("Game Over \n Your Score is: " + score + " \n Click to play again", WIDTH / 2.0, HEIGHT /2.5);
 		}
-		univ.forEach(Universe::draw);
+		univ.forEach(o -> o.draw(gc));
 
 		player.update();
-		player.draw();
+		player.draw(gc);
 		player.posX = (int) mouseX;
 		
-		enemies.stream().peek(Player::update).peek(Player::draw).forEach(e -> {
+		enemies.stream().peek(Player::update).peek(o -> o.draw(gc)).forEach(e -> {
 			if(player.colide(e) && !player.exploding) {
 				player.explode();
 			}
@@ -114,7 +114,7 @@ public class Aguraki extends Application {
 				continue;
 			}
 			shot.update();
-			shot.draw();
+			shot.draw(gc);
 			for (Enemy enemy : enemies) {
 				if(shot.colide(enemy) && !enemy.exploding) {
 					score++;
@@ -148,7 +148,7 @@ public class Aguraki extends Application {
 		return new Enemy(50 + RAND.nextInt(WIDTH - 100), 0, PLAYER_SIZE, ENEMIES_IMG[RAND.nextInt(ENEMIES_IMG.length)]);
 	}
 	
-	int distance(int x1, int y1, int x2, int y2) {
+	public static int distance(int x1, int y1, int x2, int y2) {
 		return (int) Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
 	}
 	

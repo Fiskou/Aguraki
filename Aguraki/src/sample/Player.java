@@ -36,7 +36,7 @@ public class Player {
 
     public void draw(GraphicsContext gc) {
         if(exploding) {
-            gc.drawImage(EXPLOSION_IMG, explosionStep % EXPLOSION_COL * EXPLOSION_W, (explosionStep / EXPLOSION_ROWS) * EXPLOSION_H + 1,
+            gc.drawImage(EXPLOSION_IMG, explosionStep % EXPLOSION_COL * EXPLOSION_W, (explosionStep / (EXPLOSION_ROWS * 1.0)) * EXPLOSION_H + 1,
                     EXPLOSION_W, EXPLOSION_H,
                     posX, posY, size, size);
         }
@@ -46,7 +46,7 @@ public class Player {
     }
 
     public boolean colide(Player other) {
-        int d = distance(this.posX + size / 2, this.posY + size /2,
+        int d = Aguraki.distance(this.posX + size / 2, this.posY + size /2,
                 other.posX + other.size / 2, other.posY + other.size / 2);
         return d < other.size / 2 + this.size / 2 ;
     }
