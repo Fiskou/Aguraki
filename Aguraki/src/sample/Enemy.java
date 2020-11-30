@@ -24,7 +24,9 @@ public class Enemy extends Player {
      */
     public void update() {
         super.update();
-        if(!exploding && !destroyed) posY += SPEED;
-        if(posY > HEIGHT) destroyed = true;
+        if(!exploding && !destroyed)
+            posY += SPEED;
+        if(posY > HEIGHT)
+            destroyed = true;
     }
 }

@@ -32,6 +32,21 @@ public class Player {
     }
 
     /**
+     * Setter position X
+     * @param posX position X de base
+     */
+    public void setPosX(int posX) {
+        this.posX = posX;
+    }
+
+    /**
+     * @return position X
+     */
+    public int getPosX() {
+        return posX;
+    }
+
+    /**
      * @return Un tir du joueur à partir de sa position
      */
     public Shot shoot() {
@@ -42,7 +57,8 @@ public class Player {
      * Mise à jour du joueur (vie / mort)
      */
     public void update() {
-        if(exploding) explosionStep++;
+        if(exploding)
+            explosionStep++;
         destroyed = explosionStep > EXPLOSION_STEPS;
     }
 
