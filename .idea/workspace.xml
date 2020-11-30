@@ -26,7 +26,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -42,19 +42,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -75,6 +62,9 @@
       <updated>1606331316139</updated>
       <workItem from="1606331318011" duration="7693000" />
       <workItem from="1606339360350" duration="1024000" />
+      <workItem from="1606399151391" duration="207000" />
+      <workItem from="1606472259749" duration="101000" />
+      <workItem from="1606720205290" duration="943000" />
     </task>
     <servers />
   </component>
@@ -82,6 +72,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="261" y="0" key="#Plugins" timestamp="1606472289659">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="261" y="0" key="#Plugins/0.0.1536.824@0.0.1536.824" timestamp="1606472289659" />
     <state x="116" y="195" key="#Project_Structure" timestamp="1606339539835">
       <screen x="0" y="0" width="1272" height="1242" />
     </state>
@@ -95,22 +89,26 @@
       <screen x="0" y="0" width="1268" height="1236" />
     </state>
     <state x="528" y="377" key="FileChooserDialogImpl/0.0.1268.1236@0.0.1268.1236" timestamp="1606339383463" />
-    <state width="1229" height="348" key="GridCell.Tab.0.bottom" timestamp="1606340395853">
-      <screen x="0" y="0" width="1272" height="1242" />
+    <state width="1485" height="197" key="GridCell.Tab.0.bottom" timestamp="1606399360216">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1229" height="348" key="GridCell.Tab.0.bottom/0.0.1272.1242@0.0.1272.1242" timestamp="1606340395853" />
-    <state width="1229" height="348" key="GridCell.Tab.0.center" timestamp="1606340395853">
-      <screen x="0" y="0" width="1272" height="1242" />
+    <state width="1485" height="197" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606399360216" />
+    <state width="1485" height="197" key="GridCell.Tab.0.center" timestamp="1606399360216">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1229" height="348" key="GridCell.Tab.0.center/0.0.1272.1242@0.0.1272.1242" timestamp="1606340395853" />
-    <state width="1229" height="348" key="GridCell.Tab.0.left" timestamp="1606340395853">
-      <screen x="0" y="0" width="1272" height="1242" />
+    <state width="1485" height="197" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606399360216" />
+    <state width="1485" height="197" key="GridCell.Tab.0.left" timestamp="1606399360216">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1229" height="348" key="GridCell.Tab.0.left/0.0.1272.1242@0.0.1272.1242" timestamp="1606340395853" />
-    <state width="1229" height="348" key="GridCell.Tab.0.right" timestamp="1606340395853">
-      <screen x="0" y="0" width="1272" height="1242" />
+    <state width="1485" height="197" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606399360216" />
+    <state width="1485" height="197" key="GridCell.Tab.0.right" timestamp="1606399360216">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1229" height="348" key="GridCell.Tab.0.right/0.0.1272.1242@0.0.1272.1242" timestamp="1606340395853" />
+    <state width="1485" height="197" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606399360216" />
     <state x="413" y="372" width="752" height="591" key="NewModule_or_Project.wizard" timestamp="1606338497892">
       <screen x="0" y="0" width="1268" height="1236" />
     </state>
@@ -125,5 +123,9 @@
       <screen x="0" y="0" width="2554" height="1244" />
     </state>
     <state x="1270" y="0" width="1291" height="1251" key="dock-window-1/0.0.2554.1244@0.0.2554.1244" timestamp="1606335424848" />
+    <state x="347" y="0" width="840" height="1034" key="search.everywhere.popup" timestamp="1606472269889">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="347" y="0" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1606472269889" />
   </component>
 </project>

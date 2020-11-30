@@ -46,7 +46,6 @@ public class Aguraki extends Application {
 	private double mouseX;
 	public static int score;
 
-	//start
 	public void start(Stage stage) throws Exception {
 		Canvas canvas = new Canvas(WIDTH, HEIGHT);	
 		gc = canvas.getGraphicsContext2D();
@@ -69,7 +68,9 @@ public class Aguraki extends Application {
 		
 	}
 
-	//setup the game
+	/**
+	 * SetUp de l'application
+	 */
 	private void setup() {
 		univ = new ArrayList<>();
 		shots = new ArrayList<>();
@@ -78,8 +79,11 @@ public class Aguraki extends Application {
 		score = 0;
 		IntStream.range(0, MAX_ENNEMIES).mapToObj(i -> this.newEnemy()).forEach(enemies::add);
 	}
-	
-	//run Graphics
+
+	/**
+	 * Le run de l'application
+	 * @param gc interface graphique canvas
+	 */
 	private void run(GraphicsContext gc) {
 		gc.setFill(Color.grayRgb(20));
 		gc.fillRect(0, 0, WIDTH, HEIGHT);
@@ -143,16 +147,26 @@ public class Aguraki extends Application {
 				}
 		}
 	}
-	
+
+	/**
+	 * @return Un nouvel ennemi
+	 */
 	Enemy newEnemy() {
 		return new Enemy(50 + RAND.nextInt(WIDTH - 100), 0, PLAYER_SIZE, ENEMIES_IMG[RAND.nextInt(ENEMIES_IMG.length)]);
 	}
-	
+
+	/**
+	 *
+	 * @param x1 position X - objet 1
+	 * @param y1 position Y - objet 1
+	 * @param x2 position X - objet 2
+	 * @param y2 position Y - objet 2
+	 * @return La distance entre les deux objets
+	 */
 	public static int distance(int x1, int y1, int x2, int y2) {
 		return (int) Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
 	}
-	
-	
+
 	public static void main(String[] args) {
 		launch();
 	}

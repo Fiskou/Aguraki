@@ -10,6 +10,11 @@ public class Universe {
     private final int h, w, r, g, b;
     private double opacity;
 
+    /**
+     * Contructeur d'un univers (décors)
+     * @param RAND variable random
+     * @param WIDTH largeur de la fenêtre
+     */
     public Universe(Random RAND, int WIDTH) {
         posX = RAND.nextInt(WIDTH);
         posY = 0;
@@ -23,6 +28,10 @@ public class Universe {
         if(opacity > 0.5) opacity = 0.5;
     }
 
+    /**
+     * Dessine l'univers dans l'interface
+     * @param gc interface graphique (canvas)
+     */
     public void draw(GraphicsContext gc) {
         if(opacity > 0.8) opacity-=0.01;
         if(opacity < 0.1) opacity+=0.01;
